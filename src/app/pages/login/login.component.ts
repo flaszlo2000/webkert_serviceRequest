@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ServiceRequest } from 'src/app/shared/models/fhir/ServiceRequest.model';
+import { FirebaseService } from 'src/app/shared/services/firebase.service';
 
 @Component({
   selector: 'app-login',
@@ -6,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  list: Observable<ServiceRequest[]>;
 
-  constructor() { }
+  constructor(private firebase_service: FirebaseService) {
+    this.list = firebase_service.getRecords();
+  }
 
   ngOnInit(): void {
   }

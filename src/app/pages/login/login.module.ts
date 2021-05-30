@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
-
+import { FirebaseService } from 'src/app/shared/services/firebase.service';
 
 
 @NgModule({
@@ -10,6 +10,8 @@ import { LoginComponent } from './login.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  providers: [FirebaseService],
+  exports: [LoginComponent]
 })
 export class LoginModule { }
