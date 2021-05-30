@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+import { AddLineDialogComponent } from 'src/app/shared/components/add-line-dialog/add-line-dialog.component';
 import { ServiceRequest } from 'src/app/shared/models/fhir/ServiceRequest.model';
 import { FirebaseService } from 'src/app/shared/services/firebase.service';
 
@@ -9,15 +11,16 @@ import { FirebaseService } from 'src/app/shared/services/firebase.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent{
   displayedColumns: string[] = ['category', 'intent', 'patientInstruction', 'priority', 'status', 'subject'];
   dataSource: Observable<ServiceRequest[]>;
 
-  constructor(private firebase_service: FirebaseService) {
+  constructor(private firebase_service: FirebaseService, private line_dialog: MatDialog) {
     this.dataSource = this.firebase_service.getRecords();
   }
 
-  ngOnInit(): void {
+  createLine(): void {
+    this.line_dialog.open(AddLineDialogComponent).afterClosed();
   }
 
 

@@ -1,0 +1,32 @@
+<form [formGroup]="form_group">
+    <h3>Add record</h3>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <input matInput focus formControlName="category" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Intent</mat-label>
+        <input matInput focus formControlName="intent" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>PatientInstruction</mat-label>
+        <input matInput focus formControlName="patientInstruction" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Priority</mat-label>
+        <input matInput focus formControlName="priority" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <input matInput focus formControlName="status" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Subject</mat-label>
+        <input matInput focus formControlName="subject" required>
+      </mat-form-field>
+    <div style="display: flex; justify-content: flex-end;">
+      <button mat-button (click)="dialogRef.close()">MÉGSEM</button>
+      <button mat-button [disabled]="!form_group.valid" (click)="this.addLine()">FELVÉTEL</button>
+    </div>
+  </form>
+  
