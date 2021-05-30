@@ -13,11 +13,8 @@ export class LoginGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let logged_in: boolean = this.auth.isLogged();
 
-        if(logged_in) {
-            return logged_in;
-        } else {
-            this.redirectToLogin();
-            return logged_in;
-        }
+        if(!logged_in) { this.redirectToLogin(); }
+        
+        return logged_in;
     }
 }

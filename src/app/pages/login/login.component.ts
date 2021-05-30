@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.minLength(6), Validators.required])
   });
 
-  constructor(private login_service: AuthService, private _router: Router) { }
+  constructor(private login_service: AuthService, private _router: Router, private error_dialog: MatDialog) { }
 
 
   ngOnInit() {
@@ -28,7 +30,7 @@ export class LoginComponent implements OnInit {
     if(allowedToRedirect) {
       this._router.navigateByUrl("/home");
     } else {
-      console.log("nope");
+      this.error_dialog.open(ErrorDialogComponent);
     }
   }
 }
