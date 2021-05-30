@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SubjectsComponent } from './subjects.component';
+import { NavbarModule } from 'src/app/shared/components/navbar/navbar.module';
 
 
 
@@ -9,7 +10,8 @@ import { SubjectsComponent } from './subjects.component';
     SubjectsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NavbarModule
   ]
 })
 export class SubjectsModule { }
