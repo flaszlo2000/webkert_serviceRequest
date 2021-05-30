@@ -14,6 +14,7 @@
     "src/polyfills.ts": true,
     "src/main.ts": true,
     "src/favicon.ico": true,
-    ".vscode": true
+    ".vscode": true,
+    "src/assets": true
   }
 }
