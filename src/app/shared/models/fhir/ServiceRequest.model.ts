@@ -76,3 +76,12 @@ The two ways are really differ..
 1) current solution
 2) quantity: Quantity | Ratio | Range
 */
+
+/* used parameters
+status = draft | active | on-hold | revoked | completed | entered-in-error | unknown
+intent = proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+subject = Reference<string>
+patientInstruction = string 
+category = CodeableConcept[]
+priority = routine | urgent | asap | stat
+*/
