@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
-import { FirebaseService } from 'src/app/shared/services/firebase.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
@@ -19,7 +18,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule, MatButtonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule,
     MatDialogModule
   ],
-  providers: [FirebaseService],
   exports: [LoginComponent]
 })
 export class LoginModule { }
