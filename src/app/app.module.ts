@@ -9,6 +9,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HomeModule } from './pages/home/home.module';
 import { LoginModule } from './pages/login/login.module';
+import { SubjectsModule } from './pages/subjects/subjects.module';
+import { HistoryModule } from './pages/history/history.module';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { LoginModule } from './pages/login/login.module';
     AppRoutingModule,
     AngularFirestoreModule,
     HomeModule,
-    LoginModule
+    LoginModule,
+    SubjectsModule,
+    HistoryModule
   ],
   providers: [LoginGuard],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@ import { FirebaseService } from 'src/app/shared/services/firebase.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  displayedColumns: string[] = ['category', 'intent', 'patientInstruction', 'priority', 'status', 'subjcect'];
+  displayedColumns: string[] = ['category', 'intent', 'patientInstruction', 'priority', 'status', 'subject'];
   dataSource: Observable<ServiceRequest[]>;
 
   constructor(private firebase_service: FirebaseService) {
