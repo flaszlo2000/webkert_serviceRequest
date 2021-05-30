@@ -1,11 +1,17 @@
-<p>login works!</p>
-
-
-
-
-
-
-
-<!-- <div *ngFor="let item of list | async">
-    {{item.status}}
-</div> -->
+<div class="centering">
+    <mat-card>
+      <form [formGroup]="form_group" (ngSubmit)='this.login()'>
+        <h3>Bejelentkezés</h3>
+        <mat-form-field>
+          <mat-label>E-mail</mat-label>
+          <input type="email" name="email" matInput placeholder="Pl. teszt@teszt.hu" formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Jelszó</mat-label>
+          <input type="password" name="password" matInput minlength="6" placeholder="teszt1234" formControlName="password">
+        </mat-form-field>
+        <br>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!form_group.valid">BEJELENTKEZÉS</button>
+      </form>
+    </mat-card>
+  </div>
